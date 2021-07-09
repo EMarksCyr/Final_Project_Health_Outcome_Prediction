@@ -1,0 +1,51 @@
+the machine learning needs to be predictive (so linear regression counts)
+so you can just do linear regression
+
+
+state hypotheses prior 
+
+on thursday show mothanna:
+ the database and the intial machine leaning model that I expect to use to predict the target variable and what kind of visualizations I plan on using (d3 or plotly within javascript or tableau) and make sure this is the data sert that I want 
+
+provisional database in SQL to sjow the structure of how its going to look, can be mongodb or postgres. 
+
+make sure the data set answer the questions I want to ask 
+Maybe another dataset within this tpic is the best 
+when you try to select a machine learning model use sas jump to use a visual interface to create different models and compare their performance given the data set 
+after that 
+
+essentially I need to make a provisional database with some sample data in mongodb or SQL to show what it's going to look like
+pick my anticipated visualizations and comapre models with this data 
+
+
+Downloaded sas jump
+
+my analysis plan is to select factors likely to predict mental and physical health and perform linear regression to 
+determine how much variance in subjective health can be predicted
+
+What I have
+
+I have the csv file with participant data and the legend to parse with question coding schemes 
+I have the sql SQL data base up and running and ready for the data to be put in
+I have the predictor screening on the uncleaned data 
+A plan to use linear regression to determine which variables (alone or in combination) can best predict health outcomes
+Will use Plotly (a visual interface like tableau is helpful to test out visualizations before writing out the code)
+(the spider chart a good visualization for the performance)
+
+polynomial regression when suspecting a non-linear relationship between predictors and outcomes
+(look into this as an alternative) I suspect the relationship betwen activity freq/duration and subjective health would be logarithmic 
+try both linear and polynomial and compare performance 
+
+feature selection: the process of trying each model with different combo of features to return performance metrics, 
+this would be more effective than a correlation matrix, maybe use both to isolate the best potential predictors for the regression model
+
+
+What I need 
+
+The legend parsed and entered into the database
+The data cleaned for SAS JMP to be effective
+
+reach out to CDC to try to get 
+
+take a look at canvas to see how many rows of data need to be incuded in the provisional database but i probably just need to fill it with 50 lines of fake data and write the code for a linear regression model that can take the data from the database
+
