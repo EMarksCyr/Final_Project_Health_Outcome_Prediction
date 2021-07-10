@@ -5,7 +5,7 @@
 I connected with the course coordinator, Kyla,  to explain that my work schedule conflicts with this course's lecture schedule and requested an exemption from the mandatory attendance on the basis that I watch the recorded lectures the next day. I was permitted to stay in the course despite missing live lectures as long as I agreed to complete the final group project alone. As such, this project will be conducted solely by myself, and there will be no individual branches for other members on github or a communication protocol presented in this segment. 
 
 
-## Selected Topic: Behavioural and Environmental predictors of  physical and mental health 
+## Selected Topic: Behavioural and Environmental Predictors of Physical and Mental Health 
 
 The topic that I will be investigated in this project is the predictive power of various environmental and behavioural factors in an individual's life on their mental and physical health. 
 
