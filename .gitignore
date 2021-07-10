@@ -1,4 +1,7 @@
-data/
+data.csv
+provisional_db.csv
+provisional_db_cut.csv
+
 model_assessment/
 
 # Byte-compiled / optimized / DLL files
