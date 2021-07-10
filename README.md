@@ -5,7 +5,7 @@
 I connected with the course coordinator, Kyla,  to explain that my work schedule conflicts with this course's lecture schedule and requested an exemption from the mandatory attendance on the basis that I watch the recorded lectures the next day. I was permitted to stay in the course despite missing live lectures as long as I agreed to complete the final group project alone. As such, this project will be conducted solely by myself, and there will be no individual branches for other members on github or a communication protocol presented in this segment. 
 
 
-## Selected Topic: Behavioural and Environmental Predictors of Physical and Mental Health 
+## Selected Topic: Behavioural and Environmental predictors of  physical and mental health 
 
 The topic that I will be investigated in this project is the predictive power of various environmental and behavioural factors in an individual's life on their mental and physical health. 
 
@@ -34,6 +34,12 @@ Lastly, any records or columns that were missing any values were removed from th
  The CDC provided an ASCII text file with the [following information on variable layout](https://www.cdc.gov/brfss/annual_data/2019/llcp_varlayout_19_onecolumn.html). This was used to parse the file and store the data in a .csv file which was cleaned in excel and data_cleaning.ipynb then stored as data/final_provisional_db.csv. These results can be interpreted using the provided [codebook](https://www.cdc.gov/brfss/annual_data/2019/pdf/codebook19_llcp-v2-508.HTML). I am working on parsing this file using beautifulsoup to store the coding schemes in a table in the SQL database I will be creating using the following structure. 
  
  ![ERD](imgs/ERD.png)
+ 
+ ### Draft Machine Learning Model
+ 
+ The draft model consists of a linear regression model connected to the provisional database. In this case a single linear regression model was fitted to the relationship between frequency of physical activity and percieved general health. Both the data for the predictor and the outcome need to be recoded into an ordinal scale as they currently lack order an, as such, the model reveals nothing of value (shown below).
+ 
+ ![Prov_LM_model](Prov_LM_model.PNG)
  
 ## Questions I Hope To Answer
 
