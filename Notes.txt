@@ -49,3 +49,13 @@ reach out to CDC to try to get
 
 take a look at canvas to see how many rows of data need to be incuded in the provisional database but i probably just need to fill it with 50 lines of fake data and write the code for a linear regression model that can take the data from the database
 
+theres a case of:
+ - a unique value
+ - a value HIDDEN 
+	- See interview date
+ - no label 
+	- But referes to a previous label, e.g. Interview Day
+ - BLANK
+ - Range (format is "# - #")
+	- Label irrelevent, refer to previous label)
+ 	- First part of range unroll if repeated labels

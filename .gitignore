@@ -1,6 +1,7 @@
+tmp/
 data.csv
-provisional_db.csv
-provisional_db_cut.csv
+_init_.py
+Notes.txt
 
 model_assessment/
 
