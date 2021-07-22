@@ -39,7 +39,7 @@ Lastly, any records or columns that were missing any values were removed from th
  
  The draft model consists of a linear regression model connected to the provisional database. In this case a single linear regression model was fitted to the relationship between frequency of physical activity and percieved general health. Both the data for the predictor and the outcome need to be recoded into an ordinal scale as they currently lack order an, as such, the model reveals nothing of value (shown below).
  
- ![Prov_LM_model](Prov_LM_model.PNG)
+ ![Prov_LM_model](imgs/Prov_LM_model.PNG)
  
 ## Questions I Hope To Answer
 
