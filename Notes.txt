@@ -38,7 +38,7 @@ try both linear and polynomial and compare performance
 
 feature selection: the process of trying each model with different combo of features to return performance metrics, 
 this would be more effective than a correlation matrix, maybe use both to isolate the best potential predictors for the regression model
-
+stepwise, backqards selectiion vs forward selection (look into)
 
 What I need 
 
@@ -59,3 +59,13 @@ theres a case of:
  - Range (format is "# - #")
 	- Label irrelevent, refer to previous label)
  	- First part of range unroll if repeated labels
+
+
+
+when it comes to using a subset of the data bear in mind that the first 500 rows aren't representative of the whole set so don't draw any conclusions 
+
+consider PCA considering how similar some features are, once you do this there a means for figuring out which features make up each component
+
+pull state data and present heatmaps for diff features by location
+also break down sample by demographics
+pull demographic data to break down general health and diff diseases across SES, age, gender etc. 
