@@ -1,4 +1,5 @@
 from dataclasses import dataclass
+from typing import NamedTuple
 
 _RAW_ENCODING_TABLE = """
 1 	_STATE 	2
@@ -346,30 +347,14 @@ _RAW_ENCODING_TABLE = """
 """
 
 
-class Field:
-    start_col: int = 0
-    name: str = "n/a"
-    size: int = 0
+from collections import namedtuple
 
-    def __init__(self, start_col, name, size):
-        self.start_col = start_col
-        self.name = name
-        self.size = size
-
+Field = namedtuple("Field", ["start_col", "name", "size"])
 
 # create global list to hold fields
 _FIELD_ENCODINGS = []
 
-
-def get_field(line, field):
-    start_i = field.start_col - 1
-    end_i = start_i + field.size + 1  # Up to but not inculding end index
-    # Treat all values as floats
-
-    val = line[start_i:end_i].strip()
-
-    # Assumes that all values are floats
-    return float(val) if val else None
+_FIELD_MAXVO21__UNSPECIFIED = "99999"
 
 
 def _process_encoding_table():
@@ -391,3 +376,24 @@ def get_encoding_table():
     if not _FIELD_ENCODINGS:
         _process_encoding_table()
     return _FIELD_ENCODINGS
+
+
+def get_field(line, field):
+    start_i = field.start_col - 1
+    end_i = start_i + field.size
+
+    val = line[start_i:end_i].strip()
+
+    if val == "":
+        return None
+
+    # NOTE: Assumes that all values are floats
+
+    # NOTE: MAXVO21_ doesn't spcify the unspecified value correctly. Sometimes it only uses 999. This is fine, since it's out of the valid range.
+    if field.name == "MAXVO21_" and val[:3] != _FIELD_MAXVO21__UNSPECIFIED[:3]:
+        # MAXVO21_ is implied to have two decimal places
+        val = float(val[:3]) + (float(val[3:]) / 1000.0)
+    else:
+        val = float(val)
+
+    return val
