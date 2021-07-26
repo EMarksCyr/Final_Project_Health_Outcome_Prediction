@@ -1,4 +1,4 @@
-# Final Project Segment 1
+# Final Project Overview
 
 ### Initial Note to Grader
 
@@ -35,11 +35,7 @@ Lastly, any records or columns that were missing any values were removed from th
  
  ![ERD](imgs/ERD.png)
  
- ### Draft Machine Learning Model
- 
- The draft model consists of a linear regression model connected to the provisional database. In this case a single linear regression model was fitted to the relationship between frequency of physical activity and percieved general health. Both the data for the predictor and the outcome need to be recoded into an ordinal scale as they currently lack order an, as such, the model reveals nothing of value (shown below).
- 
- ![Prov_LM_model](imgs/Prov_LM_model.PNG)
+ *Note: the User_Answers shema has changed as reflected in schema.sql with columns for each question.
  
 ## Questions I Hope To Answer
 
@@ -47,3 +43,33 @@ Lastly, any records or columns that were missing any values were removed from th
 - What impact do negative health behaviours such as smoking or drinking alcohol have on subjective health and negative health outcomes such as cancer, obesity and heart disease. 
 - Does the prevalence of positive health factors outweigh the presence of negative health factors, or does one have a greater influence on our health? 
 - If someone only has the energy or ability to make one change in their life to improve their health, what would be the best thing for them to focus on? 
+
+## Exploratory Analysis Description
+
+Exploratory analysis will aim to provide the audience with a look at health behaviours and outcomes in the U.S. in 2019. 
+U.S.-wide statistics such as the average number of vegetable consumed a day or average minutes of physical activity will be shown for the country as a whole as well as in interactive choropleth maps of displaying the aggregates for each state (an example of which is displayed below). 
+These factors will also be explored with regards to their relationships with age and gender.
+
+![Veg eaten per day](imgs/Veg_per_day_map.png)
+
+## Analysis Description
+
+First, the relationship between perceived general, physical and mental health and more objective measures of health such as the presence of disease will be explored to determine if people are actually able to accurately perceive and relay their current health status. This will be measured using Spearman Rank Order Correlation Analysis.
+Next,  ordinal logistic regression will be performed to assess the ability of health behaviours to predict quality of life as measured by mental and physical health. 
+Lastly, several complex machine learning algorithms including a random forest model and k-means clustering will be performed on the entire data set to see if it is possible to accurately identify high risk subgroups of the population for various health outcomes such as heart disease or diabetes. 
+
+## Machine Learning Model
+
+Preliminary data preprocessing: The data has been originally coded in ways that make each feature unusable, as such each feature is being recoded to reflect ordinal or continuous scales blank or unanswered questions being changed from number codes to Nan to allow them to be dropped. Continuous variables coded as 0-9999 (2 decimals implied) have been re-coded as 0.00 -99.99). 
+
+Preliminary feature engineering and preliminary feature selection, including their decision-making process: Measures of the frequency for which negative and positive health behaviours have been chosen as features to predict mental and physical health. This was done to gain insight on what changeable behaviours can be modified to improve health. Feature analysis will then be performed to identify of these features which may predict the most variance in mental and physical health.
+
+Model choice: Ordinal logistic regression will be used to determine how much of one's mental and physical health can be predicted by their positive health behaviours (physical activity, eating nutritious foods) and their negative health behaviours (eating fried foods, consuming alcohol frequently, smoking cigarettes). A key limitations of this model is that it lacks the precision of more complex models given the scale of the data and its simplicity however this is far outweighed by the benefit of interpretability. The entire purpose of this analysis is to determine which behaviours an individual can focus their energy on changing to improve their health, as such it is crucial that we be able to gain insight on the impact of each feature in this analysis. 
+In addition, a variety of more complex classification models such as balanced random forests will be trained on the data to see if a model can help the CDC identify high risk subgroups of the population for negative health outcomes such as heart disease given the information they gather in the BRFSS each year.
+
+## Storyboard
+
+![Veg eaten per day](imgs/story board.png)
+
+Plotly and go.choropleth will be used to make the choropleth maps, bar charts, scatter plots and area charts that visualize the results of data exploration. They will also be used to create the tables and spider chart used to describe the performance of various machine learning models and the box plots depicting the results from ordinal logistic regression.
+The interactive element will be the choropleth maps which you can peruse with a drop down menu and hover over each state to see the aggregated data for the given feature. 
