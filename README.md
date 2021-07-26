@@ -1,4 +1,4 @@
-# Final Project Overview
+# Final Project Segment 1
 
 ### Initial Note to Grader
 
@@ -69,7 +69,9 @@ In addition, a variety of more complex classification models such as balanced ra
 
 ## Storyboard
 
-![Veg eaten per day](imgs/story board.png)
+![Veg eaten per day](imgs/story_board.png)
 
 Plotly and go.choropleth will be used to make the choropleth maps, bar charts, scatter plots and area charts that visualize the results of data exploration. They will also be used to create the tables and spider chart used to describe the performance of various machine learning models and the box plots depicting the results from ordinal logistic regression.
 The interactive element will be the choropleth maps which you can peruse with a drop down menu and hover over each state to see the aggregated data for the given feature. 
+
+## [Google Slides link](https://docs.google.com/presentation/d/1sHpLSdKEW_r2qpCQj9jo3LttRBC7Vvh8iRqU_es1FQk/edit?usp=sharing)
