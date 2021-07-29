@@ -2,7 +2,7 @@
 
 ### Initial Note to Grader
 
-I connected with the course coordinator, Kyla,  to explain that my work schedule conflicts with this course's lecture schedule and requested an exemption from the mandatory attendance on the basis that I watch the recorded lectures the next day. I was permitted to stay in the course despite missing live lectures as long as I agreed to complete the final group project alone. As such, this project will be conducted solely by myself, and there will be no individual branches for other members on github or a communication protocol presented in this segment. 
+As I have been working on this by myself I had to create the database in full before I was able to move onto data cleaning and exploration. As such I am not entirely done my data exploration as of yet. You will see in analysis/data_exploration.ipynb that I have recoded the features, cleaned the data and completed a few of the choropleth maps however I have not yet completed them or created the additional visualizations of health and health behaviours over age or across gender. I will require a few more days to complete this and I appreciate your patience very much. Thank you!
 
 
 ## Selected Topic: Behavioural and Environmental predictors of  physical and mental health 
