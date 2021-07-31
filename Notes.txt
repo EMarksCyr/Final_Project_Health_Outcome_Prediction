@@ -69,3 +69,12 @@ consider PCA considering how similar some features are, once you do this there a
 pull state data and present heatmaps for diff features by location
 also break down sample by demographics
 pull demographic data to break down general health and diff diseases across SES, age, gender etc. 
+
+
+Question for mothanna
+
+ - what does "description of how data was split into training and testing sets" mean? just writing the code used? Talking about thingslike the ratio between test and split or other optional criteria to determine whic data belongs to the test and training group  
+
+
+linear regression you analyze one of the features and see the effect of the model, when you increase one feature wha happens
+with logistic regression you see how a one unit increase of a feature affects the log of odds how to interpret this, look up the differene between odds and probabilities and understand why we are applying the log function to make the outcome symmetrical 
