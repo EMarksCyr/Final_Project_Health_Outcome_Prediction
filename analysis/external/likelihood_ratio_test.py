@@ -32,7 +32,7 @@ def likelihood_ratio_test(features_alternate, labels, lr_model, features_null=No
         features_null = np.array(features_null)
         
         if features_null.shape[1] >= features_alternate.shape[1]:
-            raise ValueError, "Alternate features must have more features than null features"
+            raise ValueError("Alternate features must have more features than null features")
         
         lr_model.fit(features_null, labels)
         null_prob = lr_model.predict_proba(features_null)[:, 1]
