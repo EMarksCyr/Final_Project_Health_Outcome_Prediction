@@ -109,13 +109,103 @@ BRFSS Sample (n = 418,268, Mage = 55.38, SDage = 17.62),  much older than U.S. 
  
   ![Sample race pie](analysis/imgs/sample_race_pie.PNG)
   
+  ### Interactive elements with Plotly  Go Objects and Chart Studio
+  
+  #### Sources of physical exercise
+  
   Over half of the sample relied on walking as their primary source of physical activity. Secondary sources of physical activity were far more diverse which were more equally spread across gentle exercise, aerobics, yard work and strength training.
   
-  ![Sample income dist](analysis/imgs/readme/exercise_sources.PNG)
+ ![Sample income dist](analysis/imgs/readme/exercise_sources.PNG)
+
+ ![Link to live, interactive primary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
+ 
+  ![Link to live, interactive secondary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
+
+#### Health Behaviours and Outcomes Across the U.S.
+
+State differences in health behaviours juxtiposed with health outcomes hint at relationship between geographic patterns in nutrition, exercise and health outcomes such as reported health and the prevalence of negative outcomes. 
+
+  ![Health behaviours across states](analysis/imgs/health_behaviour_state.PNG)
+
+[Link to live, interactive choropleth](https://plotly.com/~elizkimcyr/3/)
 
 
+  ![Health outcomes across states](analysis/imgs/health_outcome_state.PNG)
+
+[Link to live, interactive choropleth](https://plotly.com/~elizkimcyr/5/)
+
+### Exploration of Potential Predictors of Health
+#### Health Across Age 
+
+As expected, physical health declines with age. Surprisingly, however, mental health improves with age in a completely inverse relationship to have of physical health and age.
+
+![Health across age](analysis/imgs/healthxage.png)
+  
+Health ratings are lower in the Asian and White subgroups. This may reflect differences in health. It may also reflect standards for rating or perceiving one’s health.
+  
+![Health across race](analysis/imgs/healthxrace.png)
+
+#### Education x Health
+
+Both mental health and physical health (as measured by reported days of "good"  mental or physical health per month)  increase with the highest level of achieved education. 
+
+![Health x Education](analysis/imgs/healthxeducation.png)
+
+#### Income x Health
+
+Similarly to education, household income shows strong postive relationships to both mental and physical health. 
+
+![Health x Income](analysis/imgs/healthxeducation.png)
+
+#### Income x Education x Health
+
+The following heatmaps display average mental and physical health (as measured by reported days of "good"  mental or physical health per month) for individuals at each level of educational attainment and household income bracket. The positive relationships between both income and education with reported health appear to compound with income having a greater effect. This leads to a sharp increase in both positive mental and physical health days  for those with greater financial and educational resources. A notable deviation to these trends is a decreased health for those who have attended some post-secondary school. This may reflect the health strain and lack of resources available to students currently enrolled  in college or technical school.
+
+![Mental Health x Education x  Income](analysis/imgs/incxeduxment.png)
+
+![Physical Health x Education x  Income](analysis/imgs/incxeduxphys.png)
+
+## Analysis Process
+
+![Analysis Process](analysis/imgs/readme/analysis_process.PNG)
 
 
-link to google slides: https://drive.google.com/file/d/1N9lrPJG-2MLiPuWUDKb_BakIKnftF0S9/view?usp=sharing
+### Predictor Screening
+
+Collinearity between nutrition features rendered all but one useless.
+Counterintuitively, primary exercise choice and frequency were weakly linked to general health if at all. Secondary exercise info was more promising.
+Income and BMI  were, by far and large, the least independent features from the target and expected to have the greatest impact on model performance.
+
+![Coefficients of predictors](analysis/performance/feat_analysis_health_behaviour round 1 - Fit Ordinal Logistic_effectlikelihood.png)
+
+![Coefficients of predictors](analysis/Data/feat_analysis_health_behaviour - Predictor Screening of GENHLTH.png)
+
+###  Data Preprocessing
+
+-   Features were visualized to determine their distribution. For this that appeared more gaussian, scikit-learns StandardScaler() was used and for those which appeared far from normal had scikit-learns PowerScaler() applied to fit the data closer towards a normal distribution post-analysis.    
+-   The target was fit into a range of -1 to 1
+-   The data was then split into training and testing sets with a test size of 33%
+    
+ ![preprocessing](analysis/imgs/readme/feature_processing.PNG)
+
+### Fitting the model
+
+- Target: General health rated on a 5-point Likert scale (ordinal)
+- Model: Ordinal Logistic Regression
+	- Sci-kit learn does not have a module for performing ordinal logistic regression 
+	- mord is a python package that implements some ordinal regression methods following the scikit-learn API.
+		- mord.LogisticIT (immediate-threshold regression) and mord.LogisticAT (all-threshold) were tried and found to have similar results. LogisticIT was chosen so penalty would relate to distance of y-predictions to actual y values. 
+- Scikit learns metric functions were used to produce confusion matrices, classification reports and values for accuracy and mean absolute error so performance could be compared between models.
+
+### Ordinal Regression Results
+
+The addition of features resulted in a small increase of prediction accuracy and reduction of MAE. Precision was highest when only income was used however this is only because no false predictions for classes 1, 4 or 5 were made as a result of those classes being predicted 0 times. as features increase the spread of predictions widens somewhat closer towards the actual spread of y however the predictions consistently cluster towards classes 2 and 3.
+
+ ![Performance comparison](analysis/imgs/readme/performance.png)
+ 
+  ![Performance comparison](analysis/imgs/readme/confusion_matrices.PNG)
+
+
+[link to google slides](https://drive.google.com/file/d/1N9lrPJG-2MLiPuWUDKb_BakIKnftF0S9/view?usp=sharing)
 
 
