@@ -1,77 +1,120 @@
-# Final Project Segment 1
+# Final Project: Behavioural Risk Factors in Mental and Physical Health
+## High Impact Predictors and High Risk Groups for Negative Outcomes in the U.S.
 
-### Initial Note to Grader
-
-As I have been working on this by myself I had to create the database in full before I was able to move onto data cleaning and exploration. As such I am not entirely done my data exploration as of yet. You will see in analysis/data_exploration.ipynb that I have recoded the features, cleaned the data and completed a few of the choropleth maps however I have not yet completed them or created the additional visualizations of health and health behaviours over age or across gender. I will require a few more days to complete this and I appreciate your patience very much. Thank you!
+### Initial Note
+Due to my work schedule overlapping with live lectures I have been permitted to watch recordings in return for agreeing to carry out this final project alone. As such there will not be github branching or defined communication protocol and each segment will be completed by me alone.
 
 
 ## Selected Topic: Behavioural and Environmental predictors of  physical and mental health 
 
-The topic that I will be investigated in this project is the predictive power of various environmental and behavioural factors in an individual's life on their mental and physical health. 
+Environmental/Demographic factors: 
+- Geographical location (e.g., US state, urban vs rural location) 
+- Socio-economic status. 
+- Education
+- Race
+- Age
 
-Environmental factors will include those such as geographical location (e.g., US state, urban vs rural location) or socio-economic status. Behavioural factors consist of both positive health behaviours (those considered to improve health outcomes) such as the frequency, duration and type of physical activity and negative health behaviours (those associated with poor health) such as smoking or drinking alcohol. 
+Behavioural factors:
+- Positive health behaviours (those associated with positive health outcomes)
+	- Frequency, duration or type of physical activity
+	- Consumption of fruits or vegetables
+- Negative health behaviours (those associated with poor health):
+	- Smoking
+	- Drinking alcohol.
 
-Measures of physical and mental health will include subjective measures (how a respondent rates their psychological and physical health on a Likert scale) and objective measures such as the existence or severity of illnesses (e.g., heart disease, asthma). 
+Measures of health:
+- Subjective measures
+	- How a respondent rates their general health on a Likert scale
+	- Reports of bad mental or physical health days per month
+- Objective measures
+	- The existence or severity of illnesses (e.g., heart disease, asthma).
 
-In this project, I will use feature analysis to evaluate which predictors are likely to account for the greatest variation in health outcomes. After these factors have been narrowed down, I will apply various machine learning models and assess their performance. I will mainly be testing the performance of linear regression models (single and multiple) and polynomial regression models because the interpretability of the model is crucial for understanding each predictor's role.
+Primary Objectives:
+- Provide a look at health and health behaviours in the U.S.  
+- Determine which predictors have the greatest impact on health outcomes in the United States
+
+
 
 ## Why I Selected This Topic
 
-I have chosen to investigate health outcomes because the current health landscape is incredibly complex. The more clarity we can provide on improving outcomes, the better we can empower the public to take positive steps for their quality of life. Modern society has evolved at a pace that far exceeds our physiology, and it's challenging to discern how to best take care of ourselves with so many novel factors at play. 
+Mental and physical health outcomes are currently dire in North America.
+- 42.4% obesity prevalence in the US as of 2018 ([CDC, 2021](https://www.cdc.gov/obesity/data/adult.html#:~:text=The%20US%20obesity%20prevalence%20was,from%204.7%25%20to%209.2%25.))
+- The Major Depressive Disorder affects > 6.7% of U.S. adults in a given year ([ADAA, 2021](https://adaa.org/understanding-anxiety/facts-statistics))
+	- Leading cause of disability in the U.S. for ages 15 to 44.3 ([ADAA, 2021](https://adaa.org/understanding-anxiety/facts-statistics)).
+- Approximately 39.5% of men and women in the U.S. will be diagnosed with cancer at some point during their lifetimes (based on 2015–2017 data; [National Cancer Inst., 2020](https://www.cancer.gov/about-cancer/understanding/statistics))
 
-It's simply too difficult to guess the best health practices for our bodies in an ever-changing landscape. I think the answer to this is simply looking at what people are doing already and relying on the data to tell us what works the best for the average person. Luckily we have access to a wealth of data on human behaviour and health outcomes, so I will try to use this to develop a machine learning model that can show which factors in our lives can have the greatest impact on our health so we can act accordingly. 
+The current health landscape is incredibly complex. There is an abundance of information on health online with advice for optimizing health, losing weight, or curing diseases with varying degrees of reliability. It's challenging to discern how to best take care of ourselves with so many novel factors at play. 
 
-## Data Source
-The data source I am using for this project is the 
-[Behavioural Risk Factor Surveillance System (BRFSS) 2019 Survey](https://www.cdc.gov/brfss/annual_data/annual_2019.html)
- from the Center for Disease Control and Prevention  (CDC). This survey has been carried out over the phone in 49 states across the US every year since 2015. As of now, the 2019 survey data is the most recent data set available to the public. 
+The more clarity we can provide on improving outcomes, the better we can empower the public to take positive steps for their quality of life. 
+
+
+## Data Source: BRFSS
+
+Behavioural Risk Factor Surveillance System (BRFSS):
+- A system of ongoing health-related telephone surveys designed to collect data on health-related risk behaviors and chronic health conditions
+- A collaborative project between all of the states in the United States (US) and participating US territories and the Centers for Disease Control and Prevention (CDC).
+- Analysis performed on data from the 2019 Annual Survey:
+	- Data collected from  49 states, the District of Columbia, Guam, and Puerto Rico 
+		- Exclusion: New Jersey (unable to collect enough BRFSS data in 2019 to meet the minimum requirements for inclusion)
+	- Data collected from 418,268 noninstitutionalized adults (18 years or older) U.S. citizens
+- Source: [Behavioural Risk Factor Surveillance System (BRFSS) 2019 Survey](https://www.cdc.gov/brfss/annual_data/annual_2019.html)
+
  
- This dataset consists of the answers to just under 400; however, a large number of these are follow-up questions about health conditions asked to a small number of respondents depending on their answers to previous questions, and they have been removed in the provisional database. Additionally, a number of questions were only asked in certain states. These have also been removed. 
+## Primary Research Questions
+
+1.  What does mental and physical health look like in the United States today?
+    
+2.  What impact do environmental/demographic factors have on subjective health and negative health outcomes?
+    
+3.  What impact do health behaviours have on subjective health and negative health outcomes?
+    
+4.  If someone only has the energy or ability to make one change in their life to improve their health, what would be the best thing for them to focus on?
+    
+## Exploratory Analysis
+### From ASCII and HTML to SQL
+ ![Data extraction](analysis/imgs/readme/preanalysis_process.PNG)
+
+### SQL Database Structure
+ ![SQL ERD](analysis/imgs/readme/sql_structure.PNG)
  
-Lastly, any records or columns that were missing any values were removed from the provisional database and the number of records shrunk from 418,268 to 11,041. My next steps will be to go through each item and assess how to handle NaNs and recode the data, as some are currently ordered in unstructured ways that do not provide any valuable insight. 
-
+ ### Data Cleaning
+ In original file, all instances where respondents refused to answer or responded that they did not know the answer were allocated numerical values. These needed to be replaced with a non-numerical value so as to not influence analysis. E.g.:
  
- The CDC provided an ASCII text file with the [following information on variable layout](https://www.cdc.gov/brfss/annual_data/2019/llcp_varlayout_19_onecolumn.html). This was used to parse the file and store the data in a .csv file which was cleaned in excel and data_cleaning.ipynb then stored as data/final_provisional_db.csv. These results can be interpreted using the provided [codebook](https://www.cdc.gov/brfss/annual_data/2019/pdf/codebook19_llcp-v2-508.HTML). I am working on parsing this file using beautifulsoup to store the coding schemes in a table in the SQL database I will be creating using the following structure. 
+  ![Cleaning e.g. 1](analysis/imgs/readme/cleaning1.png)
+
+ Certain numerical factors were coded as integers with “implied decimal places”. These were converted to floats and recoded to reflect the implied numbers. E.g.:
+  ![Cleaning e.g. 2](analysis/imgs/readme/cleaning2.png)
  
- ![ERD](imgs/ERD.png)
+ ### Tools for Analysis and Visualization
+ - All data was stored in pandas data frames and analysis was performed in python. Numpy was used to mathematically clean data and calculate aggregates or summary statistics. 
+- Visualizations were created using either Matplotlib (for quick sample summaries), Plotly graph_objects or plotly express.
+- Interactive visualizations were brought online to be shared using plotly chart_studio.
+
+ ### Sample Breakdown
+
+BRFSS Sample (n = 418,268, Mage = 55.38, SDage = 17.62),  much older than U.S. Population. Perhaps this reflects greater access to older respondents or an increased likelihood to participate in optional studies with age.
+
+54.6% Female, comparable to U.S. population (50.8%).
+
+*U.S. population data gathered from [U.S. Census Bureau, 2014-2019](https://www.census.gov/data/tables/time-series/demo/popest/2010s-national-detail.html)
  
- *Note: the User_Answers shema has changed as reflected in schema.sql with columns for each question.
+   ![Sample vs Pop age](analysis/imgs/sample_pop_age.png)
  
-## Questions I Hope To Answer
+ Income appears in line with U.S. Population (median household income in 2019 =  $68,703; [U.S. Census Bureau, 2020](https://www.census.gov/library/publications/2020/demo/p60-270.html)) but lacking data on income >75k)
+ 
+  ![Sample income dist](analysis/imgs/readme/sample_income_dist.PNG)
+  
+ Sample over-represents white portion of U.S. population (60.1%) and under-represents Hispanic (18.5%),  black (13.4%) and Asian (5.9%) portions of U.S. population. Native American (American Indian or Alaskan Native) population was accurately reflected at 1.3% ([U.S. Census Bureau, 2020](https://www.census.gov/quickfacts/fact/table/US/RHI325219)).
+ 
+  ![Sample race pie](analysis/imgs/sample_race_pie.PNG)
+  
+  Over half of the sample relied on walking as their primary source of physical activity. Secondary sources of physical activity were far more diverse which were more equally spread across gentle exercise, aerobics, yard work and strength training.
+  
+  ![Sample income dist](analysis/imgs/readme/exercise_sources.PNG)
 
- - What is the relationship between type, frequency and duration of activity and perceived general health, mental health and physical health?
-- What impact do negative health behaviours such as smoking or drinking alcohol have on subjective health and negative health outcomes such as cancer, obesity and heart disease. 
-- Does the prevalence of positive health factors outweigh the presence of negative health factors, or does one have a greater influence on our health? 
-- If someone only has the energy or ability to make one change in their life to improve their health, what would be the best thing for them to focus on? 
 
-## Exploratory Analysis Description
 
-Exploratory analysis will aim to provide the audience with a look at health behaviours and outcomes in the U.S. in 2019. 
-U.S.-wide statistics such as the average number of vegetable consumed a day or average minutes of physical activity will be shown for the country as a whole as well as in interactive choropleth maps of displaying the aggregates for each state (an example of which is displayed below). 
-These factors will also be explored with regards to their relationships with age and gender.
 
-![Veg eaten per day](imgs/Veg_per_day_map.png)
+link to google slides: https://drive.google.com/file/d/1N9lrPJG-2MLiPuWUDKb_BakIKnftF0S9/view?usp=sharing
 
-## Analysis Description
 
-First, the relationship between perceived general, physical and mental health and more objective measures of health such as the presence of disease will be explored to determine if people are actually able to accurately perceive and relay their current health status. This will be measured using Spearman Rank Order Correlation Analysis.
-Next,  ordinal logistic regression will be performed to assess the ability of health behaviours to predict quality of life as measured by mental and physical health. 
-Lastly, several complex machine learning algorithms including a random forest model and k-means clustering will be performed on the entire data set to see if it is possible to accurately identify high risk subgroups of the population for various health outcomes such as heart disease or diabetes. 
-
-## Machine Learning Model
-
-Preliminary data preprocessing: The data has been originally coded in ways that make each feature unusable, as such each feature is being recoded to reflect ordinal or continuous scales blank or unanswered questions being changed from number codes to Nan to allow them to be dropped. Continuous variables coded as 0-9999 (2 decimals implied) have been re-coded as 0.00 -99.99). 
-
-Preliminary feature engineering and preliminary feature selection, including their decision-making process: Measures of the frequency for which negative and positive health behaviours have been chosen as features to predict mental and physical health. This was done to gain insight on what changeable behaviours can be modified to improve health. Feature analysis will then be performed to identify of these features which may predict the most variance in mental and physical health.
-
-Model choice: Ordinal logistic regression will be used to determine how much of one's mental and physical health can be predicted by their positive health behaviours (physical activity, eating nutritious foods) and their negative health behaviours (eating fried foods, consuming alcohol frequently, smoking cigarettes). A key limitations of this model is that it lacks the precision of more complex models given the scale of the data and its simplicity however this is far outweighed by the benefit of interpretability. The entire purpose of this analysis is to determine which behaviours an individual can focus their energy on changing to improve their health, as such it is crucial that we be able to gain insight on the impact of each feature in this analysis. 
-In addition, a variety of more complex classification models such as balanced random forests will be trained on the data to see if a model can help the CDC identify high risk subgroups of the population for negative health outcomes such as heart disease given the information they gather in the BRFSS each year.
-
-## Storyboard
-
-![Veg eaten per day](imgs/story_board.png)
-
-Plotly and go.choropleth will be used to make the choropleth maps, bar charts, scatter plots and area charts that visualize the results of data exploration. They will also be used to create the tables and spider chart used to describe the performance of various machine learning models and the box plots depicting the results from ordinal logistic regression.
-The interactive element will be the choropleth maps which you can peruse with a drop down menu and hover over each state to see the aggregated data for the given feature. 
-
-## [Google Slides link](https://docs.google.com/presentation/d/1sHpLSdKEW_r2qpCQj9jo3LttRBC7Vvh8iRqU_es1FQk/edit?usp=sharing)

@@ -1,3 +1,4 @@
+*.csv
 tmp/
 data.csv
 _init_.py
