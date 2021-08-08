@@ -117,9 +117,9 @@ BRFSS Sample (n = 418,268, Mage = 55.38, SDage = 17.62),  much older than U.S. 
   
  ![Sample income dist](analysis/imgs/readme/exercise_sources.PNG)
 
- ![Link to live, interactive primary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
+ [Link to live, interactive primary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
  
-  ![Link to live, interactive secondary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
+  [Link to live, interactive secondary source of exercise sunburst chart](https://plotly.com/~elizkimcyr/8/)
 
 #### Health Behaviours and Outcomes Across the U.S.
 
@@ -204,6 +204,21 @@ The addition of features resulted in a small increase of prediction accuracy and
  ![Performance comparison](analysis/imgs/readme/performance.png)
  
   ![Performance comparison](analysis/imgs/readme/confusion_matrices.PNG)
+
+## Future Analysis
+
+- Try to improve models able to predict edge cases (classes 1, 4 and 5)
+	- Try oversampling to create simulated data points for edge case classifications to see if this improves the models ability to predict such cases.
+- Investigate relationship between income and health more closely, look for mechanisms behind the relationship to find actionable steps one could take to improve health that are more accessible than increasing their income or paths for government organizations to increase access to these sources of improved health (e.g., does access to health-care or time for a second source of physical activity increase with income and account for some of the variable of general health?)
+- Investigate BMI independently from general health. Use binary logistic regression to identify the factors at play with increased BMI (e.g., does increase physical activity or nutrition increase probability of being obese more? What are the relationships between income and nutrition and exercise?)
+- Investigate impact of age on relationships to see if samples older demographic has an impact on findings that doesn’t relate to general U.S. population.
+
+## What I Would Have Done Differently
+
+- Tried out tableau for a more convenient dashboard tool
+- Carried out less analysis on individual features until after predictor analysis so I could focus my energy on the features that played the greatest role in predicting general health (for example, I would have focused more on relationships between income and other features and focused more on the secondary source of exercise than the primary source, which I had anticipated being more important). 
+- Used R instead of python as the documentation for MASS is much more informative than that for mord and it appears to have a more active user-base.
+
 
 
 [link to google slides](https://drive.google.com/file/d/1N9lrPJG-2MLiPuWUDKb_BakIKnftF0S9/view?usp=sharing)
