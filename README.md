@@ -83,6 +83,7 @@ Behavioural Risk Factor Surveillance System (BRFSS):
   ![Cleaning e.g. 1](analysis/imgs/readme/cleaning1.png)
 
  Certain numerical factors were coded as integers with “implied decimal places”. These were converted to floats and recoded to reflect the implied numbers. E.g.:
+ 
   ![Cleaning e.g. 2](analysis/imgs/readme/cleaning2.png)
  
  ### Tools for Analysis and Visualization
