@@ -2,7 +2,7 @@
 ## High Impact Predictors and High Risk Groups for Negative Outcomes in the U.S.
 
 ### Initial Note
-Due to my work schedule overlapping with live lectures, I have been permitted to watch recordings in return for agreeing to carry out this final project alone. As such, there will not be GitHub branching or defined communication protocol, and each segment will be completed by me alone.
+Due to my work schedule overlapping with live lectures, I have been permitted to watch recordings in return for agreeing to carry out this final project alone. As such, there will not be GitHub branching or a defined communication protocol, and each segment will be completed by me alone.
 
 ## Selected Topic: Behavioural and Environmental predictors of  physical and mental health 
 
